@@ -1,0 +1,112 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Montserrat:wght@500;600;700;800&display=swap");
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 240 10% 4%;
+    --foreground: 0 0% 96%;
+
+    --card: 240 10% 8%;
+    --card-foreground: 0 0% 96%;
+
+    --popover: 240 10% 8%;
+    --popover-foreground: 0 0% 96%;
+
+    --primary: 265 90% 60%;
+    --primary-foreground: 0 0% 100%;
+
+    --secondary: 210 100% 55%;
+    --secondary-foreground: 0 0% 100%;
+
+    --muted: 240 10% 14%;
+    --muted-foreground: 240 6% 67%;
+
+    --accent: 265 80% 50%;
+    --accent-foreground: 0 0% 100%;
+
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 240 10% 18%;
+    --input: 240 10% 18%;
+    --ring: 265 90% 60%;
+
+    --radius: 1rem;
+
+    --surface: 240 10% 10%;
+    --neon: 265 100% 70%;
+    --electric: 210 100% 60%;
+    --glow-primary: 265 90% 60%;
+    --glow-secondary: 210 100% 55%;
+
+    --font-display: "Montserrat", sans-serif;
+    --font-body: "Inter", sans-serif;
+
+    --sidebar-background: 240 10% 6%;
+    --sidebar-foreground: 0 0% 95%;
+    --sidebar-primary: 265 90% 60%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 240 10% 14%;
+    --sidebar-accent-foreground: 0 0% 95%;
+    --sidebar-border: 240 10% 18%;
+    --sidebar-ring: 265 90% 60%;
+  }
+
+  * {
+    @apply border-border;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply bg-background text-foreground antialiased;
+    font-family: var(--font-body);
+    background-image:
+      radial-gradient(circle at top, hsl(var(--primary) / 0.08), transparent 30%),
+      radial-gradient(circle at 20% 20%, hsl(var(--secondary) / 0.08), transparent 24%),
+      linear-gradient(180deg, rgba(7, 7, 12, 1) 0%, rgba(10, 10, 16, 1) 48%, rgba(7, 7, 12, 1) 100%);
+    background-attachment: fixed;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    font-family: var(--font-display);
+  }
+
+  ::selection {
+    background: hsl(var(--primary) / 0.35);
+    color: hsl(var(--foreground));
+  }
+}
+
+@layer utilities {
+  .gradient-primary {
+    background: linear-gradient(135deg, hsl(var(--primary)), hsl(var(--secondary)));
+  }
+
+  .text-gradient-soft {
+    background: linear-gradient(135deg, hsl(var(--primary)), hsl(var(--secondary)));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  .glass {
+    background: hsl(var(--surface) / 0.75);
+    backdrop-filter: blur(18px);
+    border: 1px solid hsl(var(--border) / 0.55);
+  }
+
+  .surface-card {
+    background: linear-gradient(180deg, hsl(var(--card) / 0.96), hsl(var(--background) / 0.86));
+  }
+}
