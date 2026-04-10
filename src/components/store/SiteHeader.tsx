@@ -91,7 +91,7 @@ const SiteHeader = () => {
               </div>
               <div>
                 <p className="font-display text-lg font-semibold tracking-tight text-foreground">{adminSettings.storeName.toUpperCase()}</p>
-                <p className="text-xs uppercase tracking-[0.2em] text-muted-foreground">curadoria premium</p>
+                <p className="text-xs uppercase tracking-[0.2em] text-muted-foreground">A melhor do momento!</p>
               </div>
             </Link>
 
