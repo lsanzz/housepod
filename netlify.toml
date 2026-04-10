@@ -1,6 +1,11 @@
 [build]
-  command = "npm install --include=dev && npx vite build"
+  command = "npm install --include=dev --no-audit --no-fund && ./node_modules/.bin/vite build"
   publish = "dist"
 
 [build.environment]
   NODE_VERSION = "20"
+
+[[redirects]]
+  from = "/*"
+  to = "/index.html"
+  status = 200
